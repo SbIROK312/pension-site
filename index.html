@@ -139,14 +139,14 @@
 <!-- NAVIGATION -->
 <nav id="main-nav">
   <div class="nav-inner">
-    <a onclick="scrollTo('введение')"><span class="lang-ru-inline">Введение</span><span class="lang-en-inline">Introduction</span></a>
-    <a onclick="scrollTo('timeline')"><span class="lang-ru-inline">Этапы</span><span class="lang-en-inline">Timeline</span></a>
-    <a onclick="scrollTo('ch1')"><span class="lang-ru-inline">Нач. XX в.</span><span class="lang-en-inline">Early 20th c.</span></a>
-    <a onclick="scrollTo('ch2')"><span class="lang-ru-inline">1920–30-е</span><span class="lang-en-inline">1920–30s</span></a>
-    <a onclick="scrollTo('ch3')"><span class="lang-ru-inline">1945–91</span><span class="lang-en-inline">1945–91</span></a>
-    <a onclick="scrollTo('ch4')"><span class="lang-ru-inline">Сов. Россия</span><span class="lang-en-inline">Modern Russia</span></a>
-    <a onclick="scrollTo('выводы')"><span class="lang-ru-inline">Выводы</span><span class="lang-en-inline">Conclusions</span></a>
-    <a onclick="scrollTo('источники')"><span class="lang-ru-inline">Источники</span><span class="lang-en-inline">Sources</span></a>
+    <a onclick="scrollToSection('введение')"><span class="lang-ru-inline">Введение</span><span class="lang-en-inline">Introduction</span></a>
+    <a onclick="scrollToSection('timeline')"><span class="lang-ru-inline">Этапы</span><span class="lang-en-inline">Timeline</span></a>
+    <a onclick="scrollToSection('ch1')"><span class="lang-ru-inline">Нач. XX в.</span><span class="lang-en-inline">Early 20th c.</span></a>
+    <a onclick="scrollToSection('ch2')"><span class="lang-ru-inline">1920–30-е</span><span class="lang-en-inline">1920–30s</span></a>
+    <a onclick="scrollToSection('ch3')"><span class="lang-ru-inline">1945–91</span><span class="lang-en-inline">1945–91</span></a>
+    <a onclick="scrollToSection('ch4')"><span class="lang-ru-inline">Сов. Россия</span><span class="lang-en-inline">Modern Russia</span></a>
+    <a onclick="scrollToSection('выводы')"><span class="lang-ru-inline">Выводы</span><span class="lang-en-inline">Conclusions</span></a>
+    <a onclick="scrollToSection('источники')"><span class="lang-ru-inline">Источники</span><span class="lang-en-inline">Sources</span></a>
   </div>
 </nav>
 
@@ -332,7 +332,7 @@
 
 </main>
 
-<div class="back-top"><a onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ <span class="lang-ru-inline">Вернуться наверх</span><span class="lang-en-inline">Back to top</span></a></div>
+<div class="back-top"><a onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">↑ <span class="lang-ru-inline">Вернуться наверх</span><span class="lang-en-inline">Back to top</span></a></div>
 
 <footer>
   <p><span class="lang-ru-inline">Текст: © 2026, группа ДИТ-12, Астрахань АГУ им. В.Н. Татищева</span><span class="lang-en-inline">Text: © 2026, Group DIT-12, Astrakhan, ASU named after V.N. Tatishchev</span></p>
@@ -348,11 +348,11 @@
       ? 'Пенсионная система России: история и развитие'
       : "Russia's Pension System: History and Development";
   }
-  function scrollTo(id) {
+  function scrollToSection(id) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-  function scrollToIntro() { scrollTo('введение'); }
+  function scrollToIntro() { scrollToSection('введение'); }
 
   // Active nav highlighting
   const sections = document.querySelectorAll('section[id]');
